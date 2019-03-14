@@ -1,0 +1,18 @@
+options:
+  languages: [ "java" ]
+  licenses: [ "permissive" ]
+  namePrefix: ""
+  resolverType: "coursier"
+  resolvers:
+    - id: "central"
+      type: "default"
+      url: https://repo.maven.apache.org/maven2/
+  thirdPartyDirectory: "third_party/maven"
+  transitivity: runtime_deps
+  versionConflictPolicy: highest
+
+dependencies:
+  com.puppycrawl.tools:
+    checkstyle:
+      lang: java
+      version: "8.15"
