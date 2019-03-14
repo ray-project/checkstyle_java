@@ -14,12 +14,12 @@
     <module name="FileTabCharacter">
         <property name="eachLine" value="true"/>
     </module>
-
+<!-- 
     <module name="RegexpHeader">
         <property name="headerFile" value="checkstyle/license-header.txt"/>
         <property name="fileExtensions" value="java"/>
     </module>
-
+-->
     <module name="SuppressWarningsFilter" />
     <module name="TreeWalker">
         <module name="OuterTypeFilename"/>
