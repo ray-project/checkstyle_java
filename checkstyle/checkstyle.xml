@@ -16,7 +16,7 @@
     </module>
 
     <module name="RegexpHeader">
-        <property name="headerFile" value="tools/checkstyle/license-header.txt"/>
+        <property name="headerFile" value="checkstyle/license-header.txt"/>
         <property name="fileExtensions" value="java"/>
     </module>
 
