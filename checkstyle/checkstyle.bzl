@@ -12,7 +12,7 @@ def collect_sources_impl(target, ctx):
     files = []
     if hasattr(ctx.rule.attr, 'srcs'):
         for src in ctx.rule.attr.srcs:
-            for file in src.files:
+            for file in src.files.to_list():
                 if file.extension == 'java':
                     files.append(file)
     return [JavaSourceFiles(files = files)]
@@ -35,7 +35,7 @@ def _checkstyle_test_impl(ctx):
 
     # Checkstyle and its dependencies
     checkstyle_dependencies = ctx.attr._checkstyle.java.transitive_runtime_deps
-    classpath = ":".join([file.path for file in checkstyle_dependencies])
+    classpath = ":".join([file.path for file in checkstyle_dependencies.to_list()])
 
     args = ""
     inputs = []
