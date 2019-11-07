@@ -34,7 +34,7 @@ def _checkstyle_test_impl(ctx):
     sopts = ctx.attr.string_opts
 
     # Checkstyle and its dependencies
-    checkstyle_dependencies = ctx.attr._checkstyle.java.transitive_runtime_deps
+    checkstyle_dependencies = ctx.attr._checkstyle[JavaInfo].transitive_runtime_deps
     classpath = ":".join([file.path for file in checkstyle_dependencies.to_list()])
 
     args = ""
@@ -124,4 +124,3 @@ checkstyle_test = rule(
         "checkstyle_script": "%{name}.sh",
     },
 )
-
